@@ -23,6 +23,18 @@ int main(int argc, char** argv) {
     int esFabricio = 0;
     int esAlexander = 0;
     
-    
+    do{
+    	printf("\n===== Sistema de Gestion de Reciclaje =====\n");
+        printf("1. Registrar Usuario\n");
+        printf("2. Registrar Material y Cantidad Reciclada\n");
+        printf("3. Generar Estadisticas\n");
+        printf("4. Canjear Recompensas\n");
+        printf("5. Salir\n");
+        printf("Seleccione una opcion: ");
+        scanf("%d", &opcion);	
+    	
+    	
+    	printf("\n");
+	}while(opcion != 5);
 	return 0;
 }
