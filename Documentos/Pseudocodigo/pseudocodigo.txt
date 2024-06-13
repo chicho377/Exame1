@@ -1,0 +1,118 @@
+nombreFabricio = "Fabricio"
+nombreAlexander = "Alexander"
+
+papelFabricio = 0
+plasticoFabricio = 0
+vidrioFabricio = 0
+metalFabricio = 0
+puntosFabricio = 0
+
+papelAlexander = 0
+plasticoAlexander = 0
+vidrioAlexander = 0
+metalAlexander = 0
+puntosAlexander = 0
+
+opcion = 0
+nombreUsuario = ""
+material = ""
+cantidad = 0
+
+esFabricio = 0
+esAlexander = 0
+
+
+Hacer
+    Mostrar mensaje: "===== Sistema de Gestion de Reciclaje ====="
+    Mostrar opciones de menú:
+        1. Registrar Usuario
+        2. Registrar Material y Cantidad Reciclada
+        3. Generar Estadisticas
+        4. Canjear Recompensas
+        5. Salir
+        Pedir al usuario que seleccione una opción
+    Leer opción
+
+    Según la opción seleccionada hacer
+        Caso 1:
+            Pedir al usuario que ingrese su nombre de usuario
+            Leer nombreUsuario
+            Si nombreUsuario es igual a nombreFabricio entonces
+                esFabricio = 1
+                esAlexander = 0
+            Si no, si nombreUsuario es igual a nombreAlexander entonces
+                esFabricio = 0
+                esAlexander = 1
+            Si no,
+                Mostrar mensaje: "Usuario no reconocido. Intente nuevamente."
+                esFabricio = 0
+                esAlexander = 0
+
+        Caso 2:
+            Si esFabricio es igual a 0 y esAlexander es igual a 0 entonces
+                Mostrar mensaje: "Primero registre un usuario."
+            Si no,
+                Pedir al usuario que ingrese el tipo de material reciclado
+                Leer material
+                Pedir al usuario que ingrese la cantidad reciclada
+                Leer cantidad
+                Según material hacer
+                    Caso "papel":
+                        Si esFabricio es verdadero entonces
+                            Sumar cantidad a papelFabricio
+                        Si esAlexander es verdadero entonces
+                            Sumar cantidad a papelAlexander
+                    Caso "plastico":
+                        Si esFabricio es verdadero entonces
+                            Sumar cantidad a plasticoFabricio
+                        Si esAlexander es verdadero entonces
+                            Sumar cantidad a plasticoAlexander
+                    Caso "vidrio":
+                        Si esFabricio es verdadero entonces
+                            Sumar cantidad a vidrioFabricio
+                        Si esAlexander es verdadero entonces
+                            Sumar cantidad a vidrioAlexander
+                    Caso "metal":
+                        Si esFabricio es verdadero entonces
+                            Sumar cantidad a metalFabricio
+                        Si esAlexander es verdadero entonces
+                            Sumar cantidad a metalAlexander
+                    De otro modo,
+                        Mostrar mensaje: "Material no reconocido. Registro fallido."
+
+                Si esFabricio es verdadero entonces
+                    Sumar cantidad a puntosFabricio
+                    Mostrar mensaje con la cantidad registrada y los puntos totales de Fabricio
+                Si esAlexander es verdadero entonces
+                    Sumar cantidad a puntosAlexander
+                    Mostrar mensaje con la cantidad registrada y los puntos totales de Alexander
+
+        Caso 3:
+            Si esFabricio es igual a 0 y esAlexander es igual a 0 entonces
+                Mostrar mensaje: "Primero registre un usuario."
+            Si no,
+                Mostrar estadísticas de reciclaje según el usuario registrado
+                Mostrar papel, plástico, vidrio, metal reciclados y puntos totales acumulados
+
+        Caso 4:
+            Si esFabricio es igual a 0 y esAlexander es igual a 0 entonces
+                Mostrar mensaje: "Primero registre un usuario."
+            Si no,
+                Pedir al usuario que ingrese la cantidad de puntos a canjear
+                Leer cantidad
+                Si esFabricio es verdadero y cantidad es menor o igual a puntosFabricio entonces
+                    Restar cantidad de puntosFabricio
+                    Mostrar mensaje de canjeo exitoso y puntos restantes de Fabricio
+                Si no, si esAlexander es verdadero y cantidad es menor o igual a puntosAlexander entonces
+                    Restar cantidad de puntosAlexander
+                    Mostrar mensaje de canjeo exitoso y puntos restantes de Alexander
+                De otro modo,
+                    Mostrar mensaje: "Puntos insuficientes para canjear."
+
+        Caso 5:
+            Mostrar mensaje: "Saliendo del sistema..."
+
+        De otro modo,
+            Mostrar mensaje: "Opcion no valida, intente nuevamente."
+
+Mientras opción sea diferente de 5
