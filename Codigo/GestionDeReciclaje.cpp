@@ -46,9 +46,11 @@ int main(int argc, char** argv) {
                 if (strcmp(nombreUsuario, nombreFabricio) == 0) {
                     esFabricio = 1;
                     esAlexander = 0;
+                    printf("\nUsuario %s registrado con exito.\n", nombreUsuario);
                 } else if (strcmp(nombreUsuario, nombreAlexander) == 0) {
                     esFabricio = 0;
                     esAlexander = 1;
+                    printf("\nUsuario %s registrado con exito.\n", nombreUsuario);
                 } else {
                     printf("Usuario no reconocido. Intente nuevamente.\n");
                     esFabricio = 0;
