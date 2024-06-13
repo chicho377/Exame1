@@ -43,6 +43,8 @@ int main(int argc, char** argv) {
 				system("cls"); // limpiar pantalla
 				printf("\nIngrese su nombre de usuario: ");
                 scanf("%s", nombreUsuario);
+                
+                // verificacion de usuario
                 if (strcmp(nombreUsuario, nombreFabricio) == 0) {
                     esFabricio = 1;
                     esAlexander = 0;
@@ -90,12 +92,8 @@ int main(int argc, char** argv) {
                     break;
                 }
                 
-                system("cls");  /*
-									limpiar pantalla
-									Profe no me acordaba y en el pseudocodigo no me era incomodo.
-									Pero a la hora de ir haciendolo era muy incomodo
-									 y me acorde entonces lo inclui									
-									*/
+                // impresion de registro correcto
+                system("cls");  // limpiar pantalla
                 if (esFabricio) puntosFabricio += cantidad;  // 1 punto por unidad reciclada
                 if (esAlexander) puntosAlexander += cantidad;
                 printf("\nUsuario %s ha registrado %d unidades de %s.\n", nombreUsuario, cantidad, material);
@@ -107,7 +105,7 @@ int main(int argc, char** argv) {
 			
 			// estadisticas de reciclaje	
 			case 3:
-				system("cls");
+				system("cls"); // limpiar pantalla
 				if (!esFabricio && !esAlexander) {
                     printf("Primero registre un usuario.\n");
                     break;
@@ -132,14 +130,15 @@ int main(int argc, char** argv) {
 			
 			// canjeo de puntos	
 			case 4:
-				system("cls");
+				system("cls"); //limpiar pantalla
 				if (!esFabricio && !esAlexander) {
                     printf("Primero registre un usuario.\n");
                     break;
                 }
                 printf("Ingrese la cantidad de puntos a canjear: ");
                 scanf("%d", &cantidad);
-
+				
+				// verificacion de puntos por usuario
                 if (esFabricio && cantidad <= puntosFabricio) {
                     puntosFabricio -= cantidad;
                     printf("Usuario %s ha canjeado %d puntos. Puntos restantes: %d\n", nombreUsuario, cantidad, puntosFabricio);
@@ -161,7 +160,7 @@ int main(int argc, char** argv) {
 				printf("Opcion no valida, intente nuevamente.\n");
 				break;
 		}	
-    	printf("\n");
+    	printf("\n"); // salto de linea
     	
 	}while(opcion != 5);
 	

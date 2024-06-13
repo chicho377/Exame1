@@ -35,6 +35,7 @@ Hacer
 
     Según la opción seleccionada hacer
         Caso 1:
+	    Limpiar pantalla
             Pedir al usuario que ingrese su nombre de usuario
             Leer nombreUsuario
             Si nombreUsuario es igual a nombreFabricio entonces
@@ -54,6 +55,7 @@ Hacer
             Si esFabricio es igual a 0 y esAlexander es igual a 0 entonces
                 Mostrar mensaje: "Primero registre un usuario."
             Si no,
+		Limpiar pantalla
                 Pedir al usuario que ingrese el tipo de material reciclado
                 Leer material
                 Pedir al usuario que ingrese la cantidad reciclada
@@ -81,7 +83,8 @@ Hacer
                             Sumar cantidad a metalAlexander
                     De otro modo,
                         Mostrar mensaje: "Material no reconocido. Registro fallido."
-
+		
+		Limpiar pantalla
                 Si esFabricio es verdadero entonces
                     Sumar cantidad a puntosFabricio
                     Mostrar mensaje con la cantidad registrada y los puntos totales de Fabricio
@@ -90,6 +93,7 @@ Hacer
                     Mostrar mensaje con la cantidad registrada y los puntos totales de Alexander
 
         Caso 3:
+	    Limpiar pantalla
             Si esFabricio es igual a 0 y esAlexander es igual a 0 entonces
                 Mostrar mensaje: "Primero registre un usuario."
             Si no,
@@ -97,6 +101,7 @@ Hacer
                 Mostrar papel, plástico, vidrio, metal reciclados y puntos totales acumulados
 
         Caso 4:
+	    Limpiar pantalla
             Si esFabricio es igual a 0 y esAlexander es igual a 0 entonces
                 Mostrar mensaje: "Primero registre un usuario."
             Si no,
