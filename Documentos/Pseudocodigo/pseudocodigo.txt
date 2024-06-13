@@ -40,9 +40,11 @@ Hacer
             Si nombreUsuario es igual a nombreFabricio entonces
                 esFabricio = 1
                 esAlexander = 0
+		Mostrar mensaje: "Usuario Fabricio registrado con exito."
             Si no, si nombreUsuario es igual a nombreAlexander entonces
                 esFabricio = 0
                 esAlexander = 1
+		Mostrar mensaje: "Usuario Alexander registrado con exito."
             Si no,
                 Mostrar mensaje: "Usuario no reconocido. Intente nuevamente."
                 esFabricio = 0
