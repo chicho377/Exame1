@@ -40,7 +40,7 @@ int main(int argc, char** argv) {
 			
 			// registro de usuario
 			case 1:
-				system("cls");
+				system("cls"); // limpiar pantalla
 				printf("\nIngrese su nombre de usuario: ");
                 scanf("%s", nombreUsuario);
                 if (strcmp(nombreUsuario, nombreFabricio) == 0) {
@@ -64,7 +64,7 @@ int main(int argc, char** argv) {
                     printf("Primero registre un usuario.\n");
                     break;
                 }
-                system("cls");
+                system("cls"); // limpiar pantalla
                 printf("Ingrese el tipo de material reciclado (papel, plastico, vidrio, metal): ");
                 scanf("%s", material);
                 printf("Ingrese la cantidad reciclada: ");
@@ -89,7 +89,7 @@ int main(int argc, char** argv) {
                 }
                 
                 system("cls");  /*
-									Limpiar pantalla
+									limpiar pantalla
 									Profe no me acordaba y en el pseudocodigo no me era incomodo.
 									Pero a la hora de ir haciendolo era muy incomodo
 									 y me acorde entonces lo inclui									
@@ -102,9 +102,32 @@ int main(int argc, char** argv) {
                 if (esAlexander)
                     printf("\nUsuario %s ha ganado %d puntos. Puntos totales: %d\n", nombreUsuario, cantidad, puntosAlexander);
 				break;
-				
+			
+			// estadisticas de reciclaje	
 			case 3:
+				system("cls");
+				if (!esFabricio && !esAlexander) {
+                    printf("Primero registre un usuario.\n");
+                    break;
+                }
+                printf("\n===== Estadisticas de Reciclaje de %s =====\n", nombreUsuario);
+                if (esFabricio) {
+                    printf("Papel reciclado: %d unidades\n", papelFabricio);
+                    printf("Plastico reciclado: %d unidades\n", plasticoFabricio);
+                    printf("Vidrio reciclado: %d unidades\n", vidrioFabricio);
+                    printf("Metal reciclado: %d unidades\n", metalFabricio);
+                    printf("Puntos totales acumulados: %d\n", puntosFabricio);
+                }
+                if (esAlexander) {
+                    printf("Papel reciclado: %d unidades\n", papelAlexander);
+                    printf("Plastico reciclado: %d unidades\n", plasticoAlexander);
+                    printf("Vidrio reciclado: %d unidades\n", vidrioAlexander);
+                    printf("Metal reciclado: %d unidades\n", metalAlexander);
+                    printf("Puntos totales acumulados: %d\n", puntosAlexander);
+                }
+                printf("=====================================\n");
 				break;
+				
 			case 4:
 				break;
 			case 5:
