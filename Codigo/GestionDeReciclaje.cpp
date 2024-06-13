@@ -127,17 +127,41 @@ int main(int argc, char** argv) {
                 }
                 printf("=====================================\n");
 				break;
-				
+			
+			// canjeo de puntos	
 			case 4:
+				system("cls");
+				if (!esFabricio && !esAlexander) {
+                    printf("Primero registre un usuario.\n");
+                    break;
+                }
+                printf("Ingrese la cantidad de puntos a canjear: ");
+                scanf("%d", &cantidad);
+
+                if (esFabricio && cantidad <= puntosFabricio) {
+                    puntosFabricio -= cantidad;
+                    printf("Usuario %s ha canjeado %d puntos. Puntos restantes: %d\n", nombreUsuario, cantidad, puntosFabricio);
+                } else if (esAlexander && cantidad <= puntosAlexander) {
+                    puntosAlexander -= cantidad;
+                    printf("Usuario %s ha canjeado %d puntos. Puntos restantes: %d\n", nombreUsuario, cantidad, puntosAlexander);
+                } else {
+                    printf("Puntos insuficientes para canjear.\n");
+                }
 				break;
+			
+			// salida	
 			case 5:
+				printf("Saliendo del sistema...\n");
 				break;
+			
+			// mensaje de error opcion incorrecta del menu	
 			default:
+				printf("Opcion no valida, intente nuevamente.\n");
 				break;
 		}	
-    	
-    	
     	printf("\n");
+    	
 	}while(opcion != 5);
+	
 	return 0;
 }
