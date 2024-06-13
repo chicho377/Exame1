@@ -40,6 +40,7 @@ int main(int argc, char** argv) {
 			
 			// registro de usuario
 			case 1:
+				system("cls");
 				printf("\nIngrese su nombre de usuario: ");
                 scanf("%s", nombreUsuario);
                 if (strcmp(nombreUsuario, nombreFabricio) == 0) {
@@ -54,9 +55,54 @@ int main(int argc, char** argv) {
                     esAlexander = 0;
                 }
 				break;
-				
+			
+			// registro de materiales y cantidad	
 			case 2:
+				
+				// verificacion de usuario
+				if (!esFabricio && !esAlexander) {
+                    printf("Primero registre un usuario.\n");
+                    break;
+                }
+                system("cls");
+                printf("Ingrese el tipo de material reciclado (papel, plastico, vidrio, metal): ");
+                scanf("%s", material);
+                printf("Ingrese la cantidad reciclada: ");
+                scanf("%d", &cantidad);
+                
+				// verificacion de materiales
+                if (strcmp(material, "papel") == 0) {
+                    if (esFabricio) papelFabricio += cantidad;
+                    if (esAlexander) papelAlexander += cantidad;
+                } else if (strcmp(material, "plastico") == 0) {
+                    if (esFabricio) plasticoFabricio += cantidad;
+                    if (esAlexander) plasticoAlexander += cantidad;
+                } else if (strcmp(material, "vidrio") == 0) {
+                    if (esFabricio) vidrioFabricio += cantidad;
+                    if (esAlexander) vidrioAlexander += cantidad;
+                } else if (strcmp(material, "metal") == 0) {
+                    if (esFabricio) metalFabricio += cantidad;
+                    if (esAlexander) metalAlexander += cantidad;
+                } else {
+                    printf("Material no reconocido. Registro fallido.\n");
+                    break;
+                }
+                
+                system("cls");  /*
+									Limpiar pantalla
+									Profe no me acordaba y en el pseudocodigo no me era incomodo.
+									Pero a la hora de ir haciendolo era muy incomodo
+									 y me acorde entonces lo inclui									
+									*/
+                if (esFabricio) puntosFabricio += cantidad;  // 1 punto por unidad reciclada
+                if (esAlexander) puntosAlexander += cantidad;
+                printf("\nUsuario %s ha registrado %d unidades de %s.\n", nombreUsuario, cantidad, material);
+                if (esFabricio)
+                    printf("\nUsuario %s ha ganado %d puntos. Puntos totales: %d\n", nombreUsuario, cantidad, puntosFabricio);
+                if (esAlexander)
+                    printf("\nUsuario %s ha ganado %d puntos. Puntos totales: %d\n", nombreUsuario, cantidad, puntosAlexander);
 				break;
+				
 			case 3:
 				break;
 			case 4:
