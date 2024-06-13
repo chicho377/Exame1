@@ -13,7 +13,7 @@ El Sistema de Gestión de Reciclaje es una aplicación en C++ diseñada para pro
 ## Documentación
 - **[Justificación del Proyecto](./Documentos/Pseudocodigo/Justificacion.pdf)**
 - **[Requerimientos del Sistema](./Documentos/Analisis-de-Requerimientos/Requerimientos.pdf)**
-- **[Pseudocódigo del Sistema](./Documentos/Justificacion/pseudocodigo.txt)**
+- **[Pseudocódigo del Sistema](Documentos/Pseudocodigo/pseudocodigo.txt)**
 
 ## Autor
 Creado por [Fabricio Mora Gómez](https://github.com/chicho377).
