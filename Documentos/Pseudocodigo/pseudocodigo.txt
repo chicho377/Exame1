@@ -1,3 +1,7 @@
+Programa GestionDeReciclaje
+
+Inicio
+
 nombreFabricio = "Fabricio"
 nombreAlexander = "Alexander"
 
@@ -123,3 +127,5 @@ Hacer
             Mostrar mensaje: "Opcion no valida, intente nuevamente."
 
 Mientras opción sea diferente de 5
+
+Fin
