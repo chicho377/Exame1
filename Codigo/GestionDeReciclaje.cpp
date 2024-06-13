@@ -23,6 +23,7 @@ int main(int argc, char** argv) {
     int esFabricio = 0;
     int esAlexander = 0;
     
+    // menu
     do{
     	printf("\n===== Sistema de Gestion de Reciclaje =====\n");
         printf("1. Registrar Usuario\n");
@@ -33,9 +34,27 @@ int main(int argc, char** argv) {
         printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
 		
+		// switch para las opciones del menu
+		
 		switch(opcion){
+			
+			// registro de usuario
 			case 1:
+				printf("\nIngrese su nombre de usuario: ");
+                scanf("%s", nombreUsuario);
+                if (strcmp(nombreUsuario, nombreFabricio) == 0) {
+                    esFabricio = 1;
+                    esAlexander = 0;
+                } else if (strcmp(nombreUsuario, nombreAlexander) == 0) {
+                    esFabricio = 0;
+                    esAlexander = 1;
+                } else {
+                    printf("Usuario no reconocido. Intente nuevamente.\n");
+                    esFabricio = 0;
+                    esAlexander = 0;
+                }
 				break;
+				
 			case 2:
 				break;
 			case 3:
